@@ -1,0 +1,29 @@
+---
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Test task
+  description: Test score task
+paths:
+  /getscore:
+    get:
+      operationId: api.getscore
+      produces:
+        - text/plain
+      parameters:
+        - name: values
+          description: Values to score
+          in: query
+          type: array
+          items:
+            type: number
+      responses:
+        200:
+          description: Score value
+          schema:
+            type: number
+        500:
+          description: Error message
+          schema:
+            type: string
+
